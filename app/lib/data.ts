@@ -59,7 +59,7 @@ export const fetchRevenue = logAsyncCostTime('fetchRevenue', async () => {
 export const fetchLatestInvoices = logAsyncCostTime(
   'fetchLatestInvoices',
   async () => {
-    // noStore();
+    noStore();
     try {
       const data = await sql<LatestInvoiceRaw>`
       SELECT invoices.amount, customers.name, customers.image_url, customers.email, invoices.id
